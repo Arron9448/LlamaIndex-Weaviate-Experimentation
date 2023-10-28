@@ -12,7 +12,7 @@ client = weaviate.Client(
 
 assert client.is_ready()
 
-# Define schema (classes for Article, Catagory, Author, Publication)
+# Define schema (classes for Article, category, Author, Publication)
 schema = {
     "classes" : [
         {
@@ -90,10 +90,10 @@ schema = {
                     ]
                 },
                 {
-                    "name" : "catagory",
-                    "description" : "Catagory of the article",
+                    "name" : "category",
+                    "description" : "category of the article",
                     "dataType": [
-                        "Catagory"
+                        "Category"
                     ]
                 },
                 {
@@ -156,7 +156,7 @@ schema = {
                 },
                 {
                     "name" : "publication",
-                    "description" : "Publicaiton author writes for",
+                    "description" : "Publication author writes for",
                     "dataType" : [
                         "Publication"
                     ]
@@ -164,7 +164,7 @@ schema = {
             ]
         },
         {
-            "class" : "Publicaiton",
+            "class" : "Publication",
             "description" : "Publication for articles with online source",
             "vectorizer": "text2vec-openai",
             "moduleConfig" : {
@@ -174,21 +174,21 @@ schema = {
             "properties" : [
                 {
                     "name" : "name",
-                    "description" : "Name of publicaiton",
+                    "description" : "Name of publication",
                     "dataType" : [
                         "text"
                     ]
                 },
                 {
                     "name" : "hqGeoCoordinates",
-                    "description" : "GeoLocaiton of publicaiton HQ",
+                    "description" : "GeoLocaiton of publication HQ",
                     "dataType" : [
                         "geoCoordinates"
                     ]
                 },
                 {
                     "name" : "articles",
-                    "description" : "Articles belonging to publicaiton",
+                    "description" : "Articles belonging to publication",
                     "dataType" : [
                         "Article"
                     ]
