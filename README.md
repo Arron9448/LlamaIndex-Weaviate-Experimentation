@@ -1,1 +1,1 @@
-# LlamaIndex-Weaviate-Experimentation
+# LlamaIndex 🤝 Weaviate
