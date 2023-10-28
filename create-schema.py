@@ -1,16 +1,10 @@
+### ====== Create schema for Weaviate instance ====== 
 import os
 import weaviate
+from connectwcs import connectwcs
 
 # Connect to Weaviate instance (WCS)
-client = weaviate.Client(
-    url=os.getenv("WCS_URL"),
-    auth_client_secret=weaviate.AuthApiKey(api_key=os.getenv("WEAVIATE_API_KEY")),
-    additional_headers={
-        "X-OpenAI-Api-Key": os.getenv("OPENAI_API_KEY")
-    }
-)
-
-assert client.is_ready()
+client = connectwcs()
 
 # Define schema (classes for Article, category, Author, Publication)
 schema = {
